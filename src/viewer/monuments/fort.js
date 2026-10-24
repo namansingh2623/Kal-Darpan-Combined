@@ -1,0 +1,86 @@
+// Red Fort (Lal Qila). The ASI dates the foundation to 16 April 1639 and completion to 6 April 1648 (some sources say 1638 for the start).
+export default {
+  id: 'fort',
+  title: 'Red Fort',
+  dynasty: 'Mughal Empire',
+  patron: 'Shah Jahan',
+  location: 'Old Delhi',
+  weather: { city: 'Delhi', latitude: 28.6562, longitude: 77.2410 },
+  era: 'Mughal architecture',
+  yearsLabel: '1639 – 1648',
+  description:
+    'The palace fort of the Mughal capital Shahjahanabad, combining massive red sandstone defensive walls with palace pavilions linked by a water channel known as the Stream of Paradise (Nahr-i-Bihisht). Built 1639–1648 under Shah Jahan, it is part of the Red Fort Complex, a UNESCO World Heritage Site since 2007.',
+  source: 'https://whc.unesco.org/en/list/231/',
+  model: { type: 'procedural', builder: 'fort' },
+
+  construction: {
+    playSeconds: 24,
+    approximate: false,
+    note: 'The Archaeological Survey of India dates the foundation to 1639 and the completion to 1648 (some sources give 1638 for the start). The order and dates of the three stages shown are illustrative.',
+    years: [[0, 1639], [0.34, 1642], [0.68, 1645], [1, 1648]],
+    phases: [
+      { id: 'ramparts', label: 'Platform & ramparts', from: 0, to: 0.36, style: 'rise', yearLabel: '1639–42',
+        description: 'The great red sandstone walls and corner bastions define the fort’s boundary.',
+        match: { y: [0, 2.0], notTags: ['gate', 'palace'] } },
+      { id: 'gate', label: 'Gateway & battlements', from: 0.32, to: 0.68, style: 'rise', yearLabel: '1642–45',
+        description: 'The monumental gateway, bastion domes and crenellated battlements are added.',
+        match: { y: [1.3, 10], notTags: ['palace'] } },
+      { id: 'palace', label: 'Palace pavilions', from: 0.64, to: 1, style: 'drop', yearLabel: '1645–48',
+        description: 'Marble pavilions and the Stream of Paradise water channel complete the palace within.',
+        match: { tags: ['palace'] } },
+    ],
+  },
+
+  explode: {
+    center: [0, 0, 0],
+    factor: 1,
+    default: { scale: [0.5, 0.7, 0.5] },
+    rules: {
+      walls: { scale: [0.5, 0, 0.9] },
+      ramparts: { scale: [0.3, 0, 0.3] },
+      gate: { scale: [0.3, 1, 1.1] },
+      palace: { scale: [0.5, 1.6, 0.5] },
+    },
+  },
+
+  camera: {
+    position: [14, 9, 14],
+    target: [0, 1.5, 0],
+    minDistance: 6,
+    maxDistance: 40,
+    presets: {
+      front: { position: [0, 3.5, 21], target: [0, 1.8, 0] },
+      top: { position: [0.01, 26, 0.01], target: [0, 0, 0] },
+      iso: { position: [14, 10, 13], target: [0, 1.5, 0] },
+      details: { position: [3.5, 3.6, 8.5], target: [0, 2, 3] },
+    },
+  },
+
+  pois: [
+    { id: 'gate', title: 'Monumental gateway', kicker: 'The entrance', position: [0, 3.9, 3.3], part: 'gate', appearsAt: 0.68,
+      description: 'The main gateway, the Lahori Gate, faces west towards Lahore and the city. Two octagonal towers topped with domed chhatris flank the arch, with a row of small chhatris between them. In the model the long screen wall in front is the barbican added in front of the gate so it could not be seen head-on.',
+      facts: ['Two flanking towers', 'Barbican screen wall'],
+      image: '/images/poi/red-gate.jpg', imageAlt: 'The Lahori Gate entrance to the Red Fort',
+      imageCredit: 'Lucky181993', imageLicense: 'CC BY-SA 4.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:Lahori_Gate_(Red_Fort),_Delhi,_India_(2017).jpg' },
+    { id: 'walls', title: 'Red sandstone walls', kicker: 'The ramparts', position: [-4, 2.3, 3.2], part: 'walls', appearsAt: 0.36,
+      description: 'The massive red sandstone walls give the fort its name and form its outer boundary. In this model they are shown as simple walls with battlements that run off the edges, because the real walls enclose a far larger area.',
+      facts: ['Red sandstone', 'Defensive battlements'],
+      image: '/images/poi/red-wall.jpg', imageAlt: 'The Red Fort ramparts and entry gates',
+      imageCredit: 'Pinakpani', imageLicense: 'CC BY 4.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:Walls_and_entry_gates_of_Red_Fort_in_Delhi_10.jpg' },
+    { id: 'palace', title: 'Palace pavilions', kicker: 'Stream of Paradise', position: [0, 2.2, -2.1], part: 'palace', appearsAt: 1,
+      description: 'Along the river front, marble pavilions were threaded by a water channel, the Nahr-i-Bihisht or Stream of Paradise. In this model it crosses the back of the fort and passes through three simplified pavilions. Visitors reached them in order of rank: Lahori Gate, then the covered Chhatta Chowk market, the Naubat Khana drum house and the Diwan-i-Am public hall.',
+      facts: ['Marble pavilions', 'Nahr-i-Bihisht channel', 'River-front line'],
+      image: '/images/poi/red-diwan.jpg', imageAlt: 'The pillared audience hall of the Red Fort Diwan-i-Am',
+      imageCredit: 'Jakub Hałun', imageLicense: 'CC BY-SA 4.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:20191203_Diwan-i-Am_-_Red_Fort_-_Delhi_-_0458_6351_DxO.jpg' },
+  ],
+  events: [
+    { year: 1648, label: 'Fort completed', text: 'The palace fort of Shahjahanabad is completed.' },
+    { year: 1739, label: 'Nadir Shah’s invasion', text: 'The Persian ruler Nadir Shah sacks Delhi and carries away treasures, including the Peacock Throne.' },
+    { year: 1857, label: 'Uprising and fall', text: 'The last Mughal emperor, Bahadur Shah Zafar, is tried in the fort after the 1857 uprising. The British occupy it and demolish many buildings.' },
+    { year: 1947, label: 'Independence', text: 'In August 1947 the Indian flag is raised over the Lahori Gate. The Prime Minister still hoists the flag here every Independence Day.' },
+    { year: 2007, label: 'UNESCO listing', text: 'The Red Fort Complex is inscribed on the UNESCO World Heritage List.' },
+  ],
+};

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080807" />
+  <title>Demo Order — Kaal Darpan Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./pricing.css" />
+  <script type="module" src="./payment.js"></script>
+  <style>
+    .payment-page-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:28px;align-items:start}
+    .payment-panel,.payment-summary{background:rgba(23,22,18,.88);border:1px solid rgba(206,174,111,.22);border-radius:18px;padding:clamp(22px,4vw,36px)}
+    .payment-panel label{display:block;margin:18px 0 8px;color:#e7e0d3;font-size:.84rem;font-weight:700}
+    .payment-panel input{width:100%;box-sizing:border-box;background:#0e0e0c;border:1px solid #454033;border-radius:8px;padding:14px;color:#f8f3e8;font:inherit;outline:none}
+    .payment-panel input:focus{border-color:#d3b77c}
+    .secure-hint{font-size:.78rem;line-height:1.65;color:#b9b2a4;margin-top:12px}
+    .payment-summary{position:sticky;top:24px}.payment-summary h3{font-family:Cinzel,serif;letter-spacing:.07em}
+    .price-big{font-size:2.2rem;font-weight:800;color:#f2d9a1;margin:24px 0 4px}.success-screen{max-width:720px;margin:30px auto 0;text-align:center;background:rgba(18,29,21,.92);border:1px solid rgba(105,220,137,.45);border-radius:22px;padding:clamp(28px,6vw,60px)}
+    .success-check{width:92px;height:92px;margin:0 auto 24px;border-radius:50%;display:grid;place-items:center;background:#183f27;color:#7ff0a0;border:2px solid #55d879;font-size:3.4rem;box-shadow:0 0 36px rgba(69,215,111,.17)}
+    .success-screen h1{font-family:Cinzel,serif;color:#9af0af;font-size:clamp(1.7rem,4vw,2.5rem)}.success-screen p{color:#e0e8df;line-height:1.8}
+    .hidden{display:none!important}.demo-notice{min-height:1.3em;margin:10px 0;color:#f0d38e;font-size:.85rem}
+    .order-button:disabled{opacity:.6;cursor:wait}
+    @media(max-width:760px){.payment-page-grid{grid-template-columns:1fr}.payment-summary{position:static}}
+  </style>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="./index.html"><span class="brand-mark">KD</span><span>KAAL DARPAN</span></a>
+    <a class="back-link" href="./index.html">← Back to pricing</a>
+  </header>
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow"><span></span> KAAL DARPAN PRO / DEMO CHECKOUT</p>
+      <h1>DEMO <em>&amp;</em> ORDER</h1>
+      <p class="intro-copy">Complete this demo order to unlock the Macerena experience.</p>
+      <div class="billing-note"><span class="note-icon">✦</span> Demo subscription <span class="note-divider">·</span> No real payment</div>
+    </section>
+
+    <section class="payment-page-grid" id="checkout-area" aria-label="Checkout">
+      <form class="payment-panel" id="payment-form">
+        <p class="eyebrow">YOUR DETAILS</p><h2>DEMO ORDER</h2>
+        <label for="full-name">Full name</label>
+        <input id="full-name" name="fullName" autocomplete="name" placeholder="Name for the order confirmation" required maxlength="90" />
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="160" />
+        <p class="secure-hint">This is a demo checkout. No card details are needed or accepted, and no payment is charged.</p>
+        <button class="plan-button plan-button-primary order-button" id="place-order" type="submit">PLACE DEMO ORDER <span>→</span></button>
+        <p class="demo-notice" id="demo-order-notice" role="status" aria-live="polite"></p>
+        <p class="secure-hint">No real payment or recurring subscription is created.</p>
+      </form>
+      <aside class="payment-summary">
+        <p class="eyebrow">ORDER SUMMARY</p><h3>KAAL DARPAN PRO</h3>
+        <div class="summary-row"><span>Plan</span><span>Pro demo access</span></div>
+        <div class="summary-row"><span>Billing cycle</span><span>Demo only</span></div>
+        <div class="summary-row"><span>Features</span><span>All Free features + hologram and hand-gesture 3D interface</span></div>
+        <div class="price-big">$20.00 <span style="font-size:.85rem;color:#c9c0ad;font-weight:500">demo price</span></div>
+        <p class="summary-note">A demo-only confirmation unlocks the Macerena menu option. No charge is made.</p>
+      </aside>
+    </section>
+
+    <section class="success-screen hidden" id="success-screen" role="status" aria-live="polite">
+      <div class="success-check" aria-hidden="true">✓</div>
+      <p class="eyebrow">DEMO ORDER VERIFIED</p>
+      <h1>ORDER SUCCESSFULLY PLACED!</h1>
+      <p id="success-greeting">Your Kaal Darpan Pro demo order has been placed successfully.</p>
+      <p class="email-status">The green verification confirms demo access only. No payment was processed.</p>
+      <a class="plan-button plan-button-primary" href="/">CONTINUE TO KAAL DARPAN <span>→</span></a>
+      <a class="return-link" href="https://macerena-96e83.web.app/" target="_blank" rel="noopener noreferrer">OPEN MACERENA ↗</a>
+    </section>
+    <footer class="page-footer"><span>KAAL DARPAN / INDIAN KNOWLEDGE SYSTEMS</span><span>DEMO CHECKOUT</span></footer>
+  </main>
+</body>
+</html>

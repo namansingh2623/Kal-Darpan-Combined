@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080807" />
+  <title>Pricing & Billing — Kaal Darpan</title>
+  <meta name="description" content="Choose your Kaal Darpan plan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./pricing.css" />
+  <script type="module" src="./pricing.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Kaal Darpan homepage"><span class="brand-mark">KD</span><span>KAAL DARPAN</span></a>
+    <a class="back-link" href="/">← Back to Kaal Darpan</a>
+  </header>
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow"><span></span> MEMBERSHIP / ACCESS</p>
+      <h1>PRICING <em>&amp;</em> BILLING</h1>
+      <p class="intro-copy">Explore India's heritage. Choose the experience that fits your journey.</p>
+      <div class="billing-note"><span class="note-icon">✦</span> Pro demo access <span class="note-divider">·</span> No charge</div>
+    </section>
+
+    <section class="plans" id="plans" aria-label="Choose a plan">
+      <article class="plan-card" data-plan-card="free">
+        <div class="plan-topline"><span class="plan-kicker">THE ESSENTIAL EXPERIENCE</span><span class="plan-symbol">◈</span></div>
+        <h2>KAAL DARPAN <span>FREE</span></h2>
+        <p class="plan-description">The complete heritage experience, available to everyone.</p>
+        <div class="price-line"><span class="price">$0</span><span class="price-period">/ forever</span></div>
+        <ul class="feature-list">
+          <li><span>✓</span> GPS heritage exploration</li>
+          <li><span>✓</span> Heritage chatbot</li>
+          <li><span>✓</span> Timeline &amp; audio narrations</li>
+          <li><span>✓</span> Multilingual support</li>
+          <li><span>✓</span> 3D model explorations</li>
+          <li><span>✓</span> Weather &amp; seasonal views</li>
+          <li><span>✓</span> Plan your visit</li>
+          <li><span>✓</span> Notes &amp; quiz</li>
+        </ul>
+        <button class="plan-button plan-button-secondary" data-choose="free">CONTINUE WITH FREE <span>→</span></button>
+        <p class="card-footnote">All core Kaal Darpan features included.</p>
+      </article>
+
+      <article class="plan-card plan-pro" data-plan-card="pro">
+        <div class="pro-glow"></div>
+        <div class="plan-topline"><span class="plan-kicker">THE IMMERSIVE EXPERIENCE</span><span class="pro-badge">MOST ADVANCED</span></div>
+        <h2>KAAL DARPAN <span>PRO</span></h2>
+        <p class="plan-description">Everything in Free, with next-generation ways to explore.</p>
+        <div class="price-line"><span class="price">$20</span><span class="price-period">/ year, proposed price · demo only</span></div>
+        <p class="annual-detail">Equivalent to $1.67/month, billed as $20 once a year.</p>
+        <ul class="feature-list">
+          <li><span>✓</span> All features in Kaal Darpan Free</li>
+          <li class="pro-feature"><span>✦</span> Hologram experience</li>
+          <li class="pro-feature"><span>✦</span> Hand-gesture 3D interface</li>
+        </ul>
+        <button class="plan-button plan-button-primary" data-choose="pro">CHOOSE KAAL DARPAN PRO <span>→</span></button>
+        <p class="card-footnote">Demo access only · no recurring billing is created.</p>
+      </article>
+    </section>
+    <div class="selection-actions hidden" id="selection-actions"><p id="selection-copy">KAAL DARPAN PRO demo selected · no charge</p><button type="button" class="plan-button plan-button-primary continue-button" id="continue-selected">NEXT <span>→</span></button></div>
+    <p class="secure-caption"><span>◇</span> Payment flow preview · No real payment is processed on this demo website.</p>
+
+    <section class="checkout hidden" id="checkout" aria-labelledby="checkout-heading">
+      <div class="step-heading"><span class="step-number">02</span><div><p class="eyebrow">SECURE CHECKOUT PREVIEW</p><h2 id="checkout-heading">PAYMENT DETAILS</h2></div></div>
+      <div class="checkout-grid">
+        <form class="payment-form" id="payment-form" novalidate>
+          <div class="form-section-title">Billing information</div>
+          <label for="full-name">Full name</label>
+          <input id="full-name" name="fullName" autocomplete="cc-name" placeholder="Full name" required maxlength="90" />
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="160" />
+          <div class="form-section-title card-section-title">Card details <span class="demo-label">DEMO ONLY</span></div>
+          <label for="card-number">Card number</label>
+          <input id="card-number" name="cardNumber" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 0000" maxlength="23" required aria-describedby="demo-warning" />
+          <div class="field-row">
+            <div><label for="expiry">Expiry date</label><input id="expiry" name="expiry" placeholder="MM / YY" inputmode="numeric" maxlength="7" required /></div>
+            <div><label for="cvc">Security code</label><input id="cvc" name="cvc" inputmode="numeric" placeholder="CVC" maxlength="4" required /></div>
+          </div>
+          <p class="demo-warning" id="demo-warning">Prototype only: do not enter real card details. This form does not transmit or store card information and does not charge you.</p>
+          <label class="consent-row"><input id="terms" type="checkbox" required /><span>I understand this is a checkout demonstration, not a real payment.</span></label>
+          <button class="plan-button plan-button-primary order-button" type="submit">ORDER NOW <span>→</span></button>
+          <p class="form-error" id="form-error" role="alert"></p>
+        </form>
+        <aside class="order-summary">
+          <p class="eyebrow">YOUR ORDER</p><h3 id="summary-plan">KAAL DARPAN PRO</h3>
+          <div class="summary-row"><span>Plan</span><span id="summary-plan-detail">Annual subscription</span></div>
+          <div class="summary-row"><span>Billing cycle</span><span id="summary-cycle">Yearly</span></div>
+          <div class="summary-total"><span>Total today</span><strong id="summary-total">$20.00</strong></div>
+          <p class="summary-note">Demo order only. No payment is collected and no subscription is created.</p>
+          <button type="button" class="text-button" id="back-to-plans">← Back to plans</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="verification hidden" id="verification" aria-labelledby="verification-heading">
+      <div class="verification-icon">✓</div>
+      <p class="eyebrow">DEMO ORDER CREATED</p>
+      <h2 id="verification-heading">VERIFY YOUR SELECTION</h2>
+      <p class="verification-copy">Your demo order summary is ready. Choose how you would like to simulate verification. No email or SMS is sent from this prototype.</p>
+      <div class="verification-options" role="group" aria-label="Verification method">
+        <label class="verification-option"><input type="radio" name="verification-method" value="email" checked /><span class="option-icon">✉</span><span><strong>Email verification</strong><small>Show a demo code on this page</small></span></label>
+        <label class="verification-option"><input type="radio" name="verification-method" value="sms" /><span class="option-icon">▤</span><span><strong>SMS verification</strong><small>Simulated option only</small></span></label>
+      </div>
+      <button class="plan-button plan-button-primary verify-button" id="send-code">CONTINUE TO VERIFICATION <span>→</span></button>
+      <form id="verify-form" class="verify-form hidden">
+        <label for="verification-code">Enter demo verification code</label>
+        <input id="verification-code" inputmode="numeric" autocomplete="one-time-code" placeholder="6-digit code" maxlength="6" required />
+        <p class="demo-code hidden" id="demo-code-hint" role="status"></p>
+        <button class="plan-button plan-button-primary" type="submit">VERIFY ORDER <span>→</span></button>
+        <p class="form-error" id="verify-error" role="alert"></p>
+      </form>
+      <div class="verified-state hidden" id="verified-state" role="status"><span class="verified-check">✓</span><h3>DEMO VERIFICATION COMPLETE</h3><p>Your plan selection has been verified in this browser. This is not a paid subscription or proof of payment.</p><a class="return-link" href="/">RETURN TO KAAL DARPAN →</a></div>
+      <button type="button" class="text-button" id="restart-checkout">← Return to checkout</button>
+    </section>
+
+    <footer class="page-footer"><span>KAAL DARPAN / INDIAN KNOWLEDGE SYSTEMS</span><span>MADE FOR CURIOUS MINDS</span></footer>
+  </main>
+</body>
+</html>

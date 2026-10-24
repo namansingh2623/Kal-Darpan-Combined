@@ -1,0 +1,64 @@
+:root{--gem-1:#4285f4;--gem-2:#9b72cb;--gem-3:#d96570;--gem-grad:linear-gradient(120deg,var(--gem-1) 0%,var(--gem-2) 55%,var(--gem-3) 100%)}
+:root[data-theme="light"]{--gem-1:#1a73e8;--gem-2:#8451c8;--gem-3:#c4506b}
+.gemini-logo{display:block;width:1em;height:1em;flex:none}
+.museum-chat{position:fixed;right:24px;bottom:24px;z-index:12;font-family:var(--font-body);display:flex;flex-direction:column;align-items:flex-end}
+.chat-launcher{position:relative;display:grid;place-items:center;width:58px;height:58px;padding:0;border:1px solid transparent;border-radius:50%;background:radial-gradient(circle at 35% 30%,#1c1610,#0d0a08 70%);color:var(--gold-2);box-shadow:0 10px 30px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,235,200,.08);transition:border-color .4s,box-shadow .4s}
+.chat-launcher::before{content:'';position:absolute;inset:-2px;border-radius:50%;padding:1px;background:conic-gradient(from 0deg,var(--gem-1),var(--gem-2),var(--gem-3),var(--gem-2),var(--gem-1));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.95;animation:chat-spin 8s linear infinite}
+.launcher-ring{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gem-2);animation:chat-pulse 2.8s ease-out infinite;pointer-events:none}
+.launcher-icon{position:relative;display:grid;place-items:center;font-size:26px;line-height:1}
+.launcher-logo{animation:gem-twinkle 4.5s ease-in-out infinite;filter:drop-shadow(0 0 6px rgba(155,114,203,.55))}
+.launcher-close{font-size:24px;line-height:1;color:var(--gold-2)}
+@keyframes gem-twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(.88) rotate(14deg)}}
+.chat-launcher:hover{border-color:var(--gem-2);box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 26px rgba(155,114,203,.4)}
+.chat-launcher[aria-expanded=true] .launcher-ring{animation:none;opacity:0}
+@keyframes chat-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+@keyframes chat-spin{to{transform:rotate(360deg)}}
+.chat-panel{position:relative;width:min(380px,calc(100vw - 32px));height:min(520px,calc(100svh - 120px));display:flex;flex-direction:column;margin-bottom:14px;overflow:hidden;border:1px solid rgba(176,141,87,.35);border-radius:4px;background:linear-gradient(170deg,rgba(20,15,11,.97),#0d0a08 40%);color:var(--ivory);box-shadow:0 24px 70px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,235,200,.05)}
+.chat-panel::after{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:var(--gem-grad);opacity:.9;pointer-events:none}
+.chat-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px 16px;border-bottom:1px solid rgba(176,141,87,.2);background:linear-gradient(120deg,color-mix(in srgb,var(--gem-1) 14%,transparent),color-mix(in srgb,var(--gem-2) 10%,transparent) 55%,transparent)}
+.chat-eyebrow{display:flex;align-items:center;gap:7px;font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.chat-eyebrow-logo{font-size:15px}
+.chat-gemini-word{font-weight:700;background:var(--gem-grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.chat-eyebrow-rest{margin-left:-3px}
+.chat-header h2{margin:6px 0 0;font-family:var(--font-display);font-weight:400;font-size:24px;letter-spacing:.06em;color:var(--ivory)}
+.chat-close{border:0;background:transparent;color:var(--muted);font-size:24px;line-height:1}
+.chat-close:hover{color:var(--ivory)}
+.chat-messages{flex:1;overflow-y:auto;padding:18px 16px;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(176,141,87,.3) transparent}
+.chat-message{width:fit-content;max-width:88%;margin:0 0 12px;padding:11px 14px;border-radius:14px;font-size:13px;line-height:1.6}
+.chat-message.assistant{background:rgba(255,240,215,.045);border:1px solid rgba(255,240,215,.07);color:#ddd2c0;border-bottom-left-radius:3px;backdrop-filter:blur(6px)}
+.chat-message.user{margin-left:auto;background:linear-gradient(150deg,rgba(176,141,87,.24),rgba(120,92,52,.18));border:1px solid rgba(201,168,106,.4);color:#f4ead8;border-bottom-right-radius:3px}
+.chat-typing,.chat-error{margin:0 0 12px;padding:0 3px;font-size:12px;line-height:1.5}
+.typing-dots{display:inline-flex;gap:6px;padding:12px 14px;border-radius:14px;border-bottom-left-radius:3px;background:rgba(255,240,215,.045);border:1px solid rgba(255,240,215,.07)}
+.typing-dots i{width:7px;height:7px;border-radius:50%;background:var(--gem-1);box-shadow:0 0 8px color-mix(in srgb,var(--gem-1) 60%,transparent);animation:typing 1.2s ease-in-out infinite}
+.typing-dots i:nth-child(2){background:var(--gem-2);box-shadow:0 0 8px color-mix(in srgb,var(--gem-2) 60%,transparent)}
+.typing-dots i:nth-child(3){background:var(--gem-3);box-shadow:0 0 8px color-mix(in srgb,var(--gem-3) 60%,transparent)}
+.typing-dots i:nth-child(2){animation-delay:.18s}.typing-dots i:nth-child(3){animation-delay:.36s}
+@keyframes typing{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.chat-error{color:#d08b74}
+.chat-suggestions{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin:0 0 12px}
+.chat-suggestions button{padding:8px 12px;border:1px solid rgba(176,141,87,.3);border-radius:16px;background:transparent;color:#cdbf9f;text-align:left;font-size:11px;transition:border-color .3s,color .3s}
+.chat-suggestions button:hover{border-color:var(--gem-2);color:var(--ivory)}
+.chat-suggestions button:disabled{cursor:default;opacity:.6}
+.chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(176,141,87,.2)}
+.chat-form input{min-width:0;flex:1;padding:11px 12px;border:1px solid rgba(176,141,87,.25);border-radius:3px;background:rgba(0,0,0,.35);color:var(--ivory);font-size:13px}
+.chat-form input::placeholder{color:#6f665a}
+.chat-form input:focus{outline:none;border-color:var(--gem-2);box-shadow:0 0 0 1px color-mix(in srgb,var(--gem-2) 55%,transparent)}
+.chat-form button{padding:0 18px;border:0;border-radius:3px;background:var(--gem-grad);color:#fff;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 4px 14px color-mix(in srgb,var(--gem-2) 35%,transparent);transition:filter .3s,box-shadow .3s}
+.chat-form button:not(:disabled):hover{filter:brightness(1.1);box-shadow:0 6px 18px color-mix(in srgb,var(--gem-2) 50%,transparent)}
+.chat-form button:disabled{opacity:.45}
+.chat-footnote{margin:0;padding:0 14px 11px;color:#6f665a;font-size:10px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:760px){.museum-chat{right:14px;bottom:14px}.chat-panel{height:min(490px,calc(100svh - 100px))}}
+@media(prefers-reduced-motion:reduce){.launcher-ring,.chat-launcher::before,.typing-dots i,.launcher-logo{animation:none}.chat-form button{transition:none}}
+:root[data-theme="light"] .chat-launcher{background:radial-gradient(circle at 35% 30%,#fffdf8,#eee8dc 70%);color:var(--gold-2);box-shadow:0 10px 30px rgba(30,23,14,.2),inset 0 1px 0 #fff}
+:root[data-theme="light"] .chat-panel{background:linear-gradient(170deg,rgba(255,253,248,.98),#f0eade 40%);color:var(--ivory);box-shadow:0 24px 70px rgba(30,23,14,.24),inset 0 1px 0 #fff}
+:root[data-theme="light"] .chat-header,:root[data-theme="light"] .chat-form{border-color:rgba(139,107,60,.2)}
+:root[data-theme="light"] .chat-message.assistant,:root[data-theme="light"] .typing-dots{background:rgba(139,107,60,.06);border-color:rgba(139,107,60,.12);color:#40372b}
+:root[data-theme="light"] .chat-message.user{background:linear-gradient(150deg,rgba(176,141,87,.18),rgba(120,92,52,.1));color:#30291f}
+:root[data-theme="light"] .chat-suggestions button{color:#665434}
+:root[data-theme="light"] .chat-form input{background:rgba(255,255,255,.7);color:var(--ivory)}
+:root[data-theme="light"] .chat-form input::placeholder,:root[data-theme="light"] .chat-footnote{color:#766d60}
+:root[data-theme="light"] .launcher-logo{filter:drop-shadow(0 0 4px rgba(132,81,200,.35))}
+:root[data-theme="light"] .chat-header{background:linear-gradient(120deg,color-mix(in srgb,var(--gem-1) 10%,transparent),color-mix(in srgb,var(--gem-2) 8%,transparent) 55%,transparent)}
+:root[data-theme="light"] .chat-form button{color:#fff}
+:root[data-theme="light"] .chat-close:hover{color:var(--gem-2)}

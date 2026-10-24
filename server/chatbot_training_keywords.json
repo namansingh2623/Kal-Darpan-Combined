@@ -1,0 +1,1156 @@
+{
+  "meta": {
+    "title": "Chatbot Training Keywords: Taj Mahal, Qutub Minar and Red Fort",
+    "date": "2026-10-18",
+    "author": "Harsha",
+    "purpose": "Words and phrases a user might type about each monument, so the chatbot can match a question to the right answer in the 300 Q&A document.",
+    "qa_document_ranges": {
+      "taj_mahal": "Q1-100",
+      "qutub_minar": "Q101-200",
+      "red_fort": "Q201-300"
+    },
+    "note": "Every comma-separated item is a separate keyword pointing to its monument. 'Tokens' are read as typed words and variants; the model splits subword tokens itself."
+  },
+  "keyword_types": [
+    {
+      "type": "Core keyword",
+      "description": "The main name or term for a topic",
+      "how_to_use": "Primary match for a question"
+    },
+    {
+      "type": "Alias",
+      "description": "Another name for the same thing",
+      "how_to_use": "Map to the same answer as the core keyword"
+    },
+    {
+      "type": "Spelling variant or misspelling",
+      "description": "Common alternate or wrong spellings",
+      "how_to_use": "Match typos and transliterations"
+    },
+    {
+      "type": "Hindi or Hinglish",
+      "description": "Hindi words, in Devanagari or Roman letters",
+      "how_to_use": "Match users who mix languages"
+    },
+    {
+      "type": "Entity",
+      "description": "People, places, dates and events",
+      "how_to_use": "Link a question to a specific fact"
+    },
+    {
+      "type": "Intent keyword",
+      "description": "Words that show what the user wants (height, who built, when)",
+      "how_to_use": "Pick the right answer type"
+    }
+  ],
+  "intent_keywords": [
+    {
+      "intent": "Height",
+      "keywords": [
+        "height",
+        "tall",
+        "how tall",
+        "how high",
+        "elevation",
+        "metres",
+        "meters",
+        "feet",
+        "ft",
+        "kitni unchai",
+        "kitna lamba",
+        "ऊँचाई"
+      ],
+      "answer_type": "A number with units"
+    },
+    {
+      "intent": "Builder",
+      "keywords": [
+        "who built",
+        "who made",
+        "builder",
+        "constructor",
+        "architect",
+        "designer",
+        "commissioned",
+        "patron",
+        "founder",
+        "kisne banaya",
+        "किसने बनवाया",
+        "banwaya"
+      ],
+      "answer_type": "A person or ruler"
+    },
+    {
+      "intent": "Date",
+      "keywords": [
+        "when",
+        "year",
+        "date",
+        "built in",
+        "started",
+        "completed",
+        "finished",
+        "kab bana",
+        "kis saal",
+        "कब बना"
+      ],
+      "answer_type": "A year or range"
+    },
+    {
+      "intent": "Location",
+      "keywords": [
+        "where",
+        "location",
+        "address",
+        "city",
+        "state",
+        "situated",
+        "map",
+        "kahan hai",
+        "कहाँ है"
+      ],
+      "answer_type": "A place"
+    },
+    {
+      "intent": "Purpose",
+      "keywords": [
+        "why built",
+        "purpose",
+        "reason",
+        "motive",
+        "meaning",
+        "kyun banaya",
+        "क्यों बनवाया"
+      ],
+      "answer_type": "A short explanation"
+    },
+    {
+      "intent": "Cost",
+      "keywords": [
+        "cost",
+        "expense",
+        "budget",
+        "how much spent",
+        "price to build",
+        "kitna kharcha"
+      ],
+      "answer_type": "An approximate figure"
+    },
+    {
+      "intent": "Material",
+      "keywords": [
+        "made of",
+        "material",
+        "stone",
+        "marble",
+        "sandstone",
+        "iron",
+        "brick",
+        "lime mortar",
+        "patthar",
+        "पत्थर"
+      ],
+      "answer_type": "A material and source"
+    },
+    {
+      "intent": "Size",
+      "keywords": [
+        "area",
+        "size",
+        "dimensions",
+        "diameter",
+        "width",
+        "length",
+        "perimeter",
+        "acres",
+        "hectares",
+        "steps",
+        "stairs"
+      ],
+      "answer_type": "A measurement"
+    },
+    {
+      "intent": "Style",
+      "keywords": [
+        "style",
+        "architecture",
+        "design",
+        "dome",
+        "arch",
+        "minaret",
+        "gate",
+        "calligraphy",
+        "inscription",
+        "pietra dura",
+        "muqarnas"
+      ],
+      "answer_type": "A description"
+    },
+    {
+      "intent": "History",
+      "keywords": [
+        "history",
+        "timeline",
+        "battle",
+        "war",
+        "ruler",
+        "dynasty",
+        "empire",
+        "era",
+        "invasion",
+        "siege",
+        "revolt"
+      ],
+      "answer_type": "A dated event"
+    },
+    {
+      "intent": "People",
+      "keywords": [
+        "who is",
+        "who was",
+        "wife",
+        "emperor",
+        "sultan",
+        "queen",
+        "architect",
+        "calligrapher",
+        "son",
+        "father"
+      ],
+      "answer_type": "A person's role"
+    },
+    {
+      "intent": "Facts",
+      "keywords": [
+        "facts",
+        "interesting",
+        "trivia",
+        "secrets",
+        "myth",
+        "legend",
+        "mystery",
+        "did you know"
+      ],
+      "answer_type": "A short fact"
+    },
+    {
+      "intent": "Comparison",
+      "keywords": [
+        "compare",
+        "difference",
+        "versus",
+        "vs",
+        "older",
+        "taller",
+        "bigger",
+        "similar",
+        "which is better"
+      ],
+      "answer_type": "A side-by-side answer"
+    },
+    {
+      "intent": "Status",
+      "keywords": [
+        "UNESCO",
+        "world heritage",
+        "wonder",
+        "protected",
+        "ASI",
+        "national monument"
+      ],
+      "answer_type": "A listing or year"
+    },
+    {
+      "intent": "Nearby",
+      "keywords": [
+        "nearby",
+        "near",
+        "around",
+        "close to",
+        "surroundings",
+        "other monuments",
+        "distance from"
+      ],
+      "answer_type": "A list of places"
+    },
+    {
+      "intent": "Preservation",
+      "keywords": [
+        "pollution",
+        "yellowing",
+        "restoration",
+        "repair",
+        "damage",
+        "conservation",
+        "cleaning"
+      ],
+      "answer_type": "A short explanation"
+    },
+    {
+      "intent": "Visiting",
+      "keywords": [
+        "ticket",
+        "entry fee",
+        "timings",
+        "open",
+        "closed",
+        "holiday",
+        "best time",
+        "how to reach",
+        "metro"
+      ],
+      "answer_type": "Practical info (changes often)",
+      "note": "Details change, so point users to the official ASI site rather than answering from the document."
+    },
+    {
+      "intent": "Count",
+      "keywords": [
+        "how many",
+        "number of",
+        "count",
+        "total"
+      ],
+      "answer_type": "A number"
+    }
+  ],
+  "monuments": [
+    {
+      "id": "taj_mahal",
+      "name": "Taj Mahal",
+      "qa_section": "Q1-100",
+      "notes": [
+        "For claims such as the 'Black Taj', 'hands cut off' and 'Tejo Mahalaya', answer with the careful wording in Q97 and Q98 of the Q&A document; for the hands claim say there is no historical evidence for it."
+      ],
+      "categories": {
+        "core_names_and_aliases": [
+          "Taj Mahal",
+          "Taj",
+          "the Taj",
+          "Taj of Agra",
+          "Mausoleum of Mumtaz Mahal",
+          "Crown of the Palace",
+          "ivory-white marble mausoleum",
+          "wonder of Agra"
+        ],
+        "spelling_variants_and_misspellings": [
+          "Tajmahal",
+          "Taj Mehal",
+          "Taj Mahel",
+          "Taj Mahaal",
+          "Taaj Mahal",
+          "Taj Mahall",
+          "Taj Mahl",
+          "Taj Mahaal Agra"
+        ],
+        "hindi_and_hinglish": [
+          "ताजमहल",
+          "ताज महल",
+          "Taj Mahal kisne banaya",
+          "Taj Mahal kab bana",
+          "Taj Mahal ki unchai",
+          "Mumtaz ka maqbara",
+          "mohabbat ki nishani",
+          "pyaar ki nishani",
+          "Shah Jahan ka Taj"
+        ],
+        "people": [
+          "Shah Jahan",
+          "Shahjahan",
+          "Shah Jehan",
+          "Khurram",
+          "शाहजहाँ",
+          "Mumtaz Mahal",
+          "Mumtaz",
+          "Arjumand Banu Begum",
+          "Ustad Ahmad Lahori",
+          "Ahmad Lahauri",
+          "Amanat Khan",
+          "Abdul Haq Shirazi",
+          "Ismail Khan Afridi",
+          "Aurangzeb",
+          "Alamgir",
+          "Dara Shikoh",
+          "Shah Shuja",
+          "Murad Bakhsh",
+          "Jahangir",
+          "Akbar",
+          "Nur Jahan",
+          "Mirza Ghiyas Beg",
+          "Raja Jai Singh",
+          "Lord Curzon",
+          "Rabindranath Tagore",
+          "Princess Diana",
+          "Jean-Baptiste Tavernier",
+          "François Bernier",
+          "Peter Mundy",
+          "Suraj Mal"
+        ],
+        "places": [
+          "Agra",
+          "Uttar Pradesh",
+          "UP",
+          "Yamuna",
+          "Jamuna",
+          "Burhanpur",
+          "Agra Fort",
+          "Fatehpur Sikri",
+          "Sikandra",
+          "Akbar's Tomb",
+          "Itmad-ud-Daulah",
+          "Baby Taj",
+          "Mehtab Bagh",
+          "Moonlight Garden",
+          "Taj Ganj",
+          "Makrana",
+          "Rajasthan"
+        ],
+        "architecture_terms": [
+          "dome",
+          "double dome",
+          "onion dome",
+          "bulbous dome",
+          "minaret",
+          "finial",
+          "chhatri",
+          "pishtaq",
+          "iwan",
+          "charbagh",
+          "char bagh",
+          "jali",
+          "cenotaph",
+          "crypt",
+          "plinth",
+          "platform",
+          "pietra dura",
+          "parchin kari",
+          "calligraphy",
+          "Darwaza-i-Rauza",
+          "Great Gate",
+          "Jawab",
+          "mosque",
+          "reflecting pool",
+          "Al-Kawthar",
+          "symmetry"
+        ],
+        "pillar_type_words": {
+          "keywords": [
+            "pillar",
+            "column",
+            "tower",
+            "spire",
+            "minaret",
+            "stambh",
+            "minar"
+          ],
+          "rule": "All should map to the minarets unless the user clearly means another structure."
+        },
+        "materials": [
+          "white marble",
+          "Makrana marble",
+          "red sandstone",
+          "jade",
+          "crystal",
+          "lapis lazuli",
+          "turquoise",
+          "carnelian",
+          "sapphire",
+          "semi-precious stones",
+          "inlay",
+          "brick core",
+          "lime mortar"
+        ],
+        "events_and_dates": [
+          "1631",
+          "1632",
+          "1643",
+          "1653",
+          "1658",
+          "1666",
+          "1761",
+          "1803",
+          "1857",
+          "1983",
+          "2007",
+          "Battle of Samugarh",
+          "war of succession",
+          "Second Anglo-Maratha War",
+          "Deccan famine",
+          "Curzon restoration",
+          "UNESCO",
+          "New Seven Wonders"
+        ],
+        "facts_and_myths": [
+          "Black Taj",
+          "workers' hands",
+          "hands cut off",
+          "20,000 workers",
+          "colour change",
+          "leaning minarets",
+          "fake graves",
+          "real graves",
+          "love monument",
+          "teardrop on the cheek of time",
+          "Tejo Mahalaya",
+          "temple claim",
+          "Diana bench"
+        ],
+        "preservation_and_visiting": [
+          "yellowing",
+          "pollution",
+          "Taj Trapezium Zone",
+          "TTZ",
+          "mud pack",
+          "multani mitti",
+          "midges",
+          "acid rain",
+          "moonlight viewing",
+          "Friday closed",
+          "ASI",
+          "restoration"
+        ]
+      }
+    },
+    {
+      "id": "qutub_minar",
+      "name": "Qutub Minar",
+      "qa_section": "Q101-200",
+      "notes": [
+        "The name has several accepted spellings. Treat Qutub, Qutb, Qutab and Kutub as the same word."
+      ],
+      "categories": {
+        "core_names_and_aliases": [
+          "Qutub Minar",
+          "Qutb Minar",
+          "Qutab Minar",
+          "Kutub Minar",
+          "Qutub Minaar",
+          "Qutb Minaret",
+          "Qutb complex",
+          "Qutub complex",
+          "Victory Tower",
+          "Tower of Victory",
+          "Delhi's tallest minaret"
+        ],
+        "spelling_variants_and_misspellings": [
+          "Kutab Minar",
+          "Kutub Minaar",
+          "Qutub Meenar",
+          "Qutub Minnar",
+          "Kuth Minar",
+          "Qutub Minor",
+          "Qutub Menar",
+          "Qutb Menar",
+          "Qutab Meenar"
+        ],
+        "hindi_and_hinglish": [
+          "कुतुब मीनार",
+          "क़ुतुब मीनार",
+          "Kutub Minar kisne banaya",
+          "Qutub Minar kitni unchi hai",
+          "Qutub Minar ki unchai",
+          "Delhi ki Qutub Minar",
+          "Mehrauli ki minar",
+          "lohe ka stambh",
+          "Loh Stambh"
+        ],
+        "people": [
+          "Qutb ud-Din Aibak",
+          "Qutbuddin Aibak",
+          "Kutubuddin Aibak",
+          "कुतुबुद्दीन ऐबक",
+          "Iltutmish",
+          "Altamash",
+          "Shamsuddin Iltutmish",
+          "Firoz Shah Tughlaq",
+          "Feroz Shah Tughlak",
+          "Alauddin Khalji",
+          "Allauddin Khilji",
+          "Sikandar Lodi",
+          "Muhammad of Ghor",
+          "Muhammad Ghori",
+          "Shahabuddin Ghori",
+          "Prithviraj Chauhan",
+          "Prithviraj III",
+          "Razia Sultana",
+          "Balban",
+          "Timur",
+          "Tamerlane",
+          "Muhammad bin Tughlaq",
+          "Qutbuddin Bakhtiyar Kaki",
+          "Major Robert Smith",
+          "Genghis Khan",
+          "Jalaluddin Mangburni",
+          "Chandragupta II",
+          "Adham Khan",
+          "Imam Zamin"
+        ],
+        "places": [
+          "Delhi",
+          "Mehrauli",
+          "South Delhi",
+          "Lal Kot",
+          "Qila Rai Pithora",
+          "Tomar Rajputs",
+          "Anangpal Tomar",
+          "Quwwatul-Islam Mosque",
+          "Alai Darwaza",
+          "Alai Minar",
+          "Iron Pillar",
+          "Hauz-i-Shamsi",
+          "Jahaz Mahal",
+          "Jamali Kamali",
+          "Adham Khan's Tomb",
+          "Bhool Bhulaiya",
+          "Mehrauli Archaeological Park",
+          "Rajon ki Baoli",
+          "Gandhak ki Baoli",
+          "Yogmaya Temple",
+          "Minaret of Jam",
+          "Qutab Minar metro"
+        ],
+        "architecture_terms": [
+          "minaret",
+          "shaft",
+          "five storeys",
+          "balcony",
+          "muqarnas",
+          "honeycomb",
+          "flutes",
+          "fluted",
+          "spiral staircase",
+          "379 steps",
+          "Great Screen",
+          "mihrab",
+          "corbelled arch",
+          "Indo-Islamic",
+          "Delhi Sultanate architecture",
+          "Nagari script",
+          "Arabic calligraphy",
+          "Kufic",
+          "Naskh",
+          "cupola",
+          "Smith's Folly"
+        ],
+        "pillar_type_words": {
+          "keywords": [
+            "pillar",
+            "column",
+            "tower",
+            "minar",
+            "stambh",
+            "lat"
+          ],
+          "rule": "Map to the minaret, but map 'iron', 'rust' and 'Gupta' to the Iron Pillar."
+        },
+        "materials": [
+          "red sandstone",
+          "marble",
+          "rubble core",
+          "lime mortar",
+          "wrought iron",
+          "phosphorus",
+          "reused temple stones"
+        ],
+        "events_and_dates": [
+          "1192",
+          "1193",
+          "1199",
+          "1206",
+          "1210",
+          "1220",
+          "1235",
+          "1311",
+          "1316",
+          "1368",
+          "1369",
+          "1398",
+          "1503",
+          "1526",
+          "1803",
+          "1828",
+          "1848",
+          "1981",
+          "1993",
+          "Second Battle of Tarain",
+          "Tarain",
+          "Slave dynasty",
+          "Mamluk dynasty",
+          "lightning",
+          "stampede",
+          "4 December 1981",
+          "UNESCO"
+        ],
+        "facts_and_myths": [
+          "victory tower",
+          "first mosque of Delhi",
+          "rust-free iron pillar",
+          "hugging the pillar",
+          "27 temples",
+          "tallest brick minaret",
+          "unfinished tower",
+          "double height",
+          "72.5 metres",
+          "238 feet"
+        ],
+        "preservation_and_visiting": [
+          "closed staircase",
+          "no climbing",
+          "pollution",
+          "sandstone weathering",
+          "Qutub Festival",
+          "Phool Walon Ki Sair",
+          "ASI",
+          "restoration"
+        ]
+      }
+    },
+    {
+      "id": "red_fort",
+      "name": "Red Fort",
+      "qa_section": "Q201-300",
+      "notes": [
+        "The word 'gate' most often means the Lahori Gate, so map it there unless the user names the Delhi Gate or the Water Gate.",
+        "For 'height' questions about the Red Fort, default to the walls: 18 m on the river side and about 33 m on the city side."
+      ],
+      "categories": {
+        "core_names_and_aliases": [
+          "Red Fort",
+          "Lal Qila",
+          "Lal Quila",
+          "Lal Kila",
+          "Qila-i-Mubarak",
+          "Qila-e-Mubarak",
+          "Blessed Fort",
+          "Red Fort Delhi",
+          "Red Fort Complex",
+          "Delhi's Red Fort",
+          "Old Delhi fort"
+        ],
+        "spelling_variants_and_misspellings": [
+          "Redfort",
+          "Red Foort",
+          "Lal Qilla",
+          "Lall Qila",
+          "Laal Qila",
+          "Lal Killa",
+          "Lal Kila Delhi",
+          "Red Fortt"
+        ],
+        "hindi_and_hinglish": [
+          "लाल क़िला",
+          "लाल किला",
+          "Lal Qila kisne banaya",
+          "Lal Qila kab bana",
+          "Lal Qila ki unchai",
+          "15 August Lal Qila",
+          "Lal Qile se bhashan",
+          "Lal Qile ki deewar"
+        ],
+        "people": [
+          "Shah Jahan",
+          "Shahjahan",
+          "Ustad Ahmad Lahori",
+          "Ustad Hamid",
+          "Aurangzeb",
+          "Bahadur Shah Zafar",
+          "Bahadur Shah II",
+          "Nadir Shah",
+          "Ahmad Shah Abdali",
+          "Ahmad Shah Durrani",
+          "Shah Alam II",
+          "Jahanara Begum",
+          "Fatehpuri Begum",
+          "Islam Shah Suri",
+          "Salim Shah Suri",
+          "Jawaharlal Nehru",
+          "Nehru",
+          "Shah Nawaz Khan",
+          "Prem Sahgal",
+          "Gurbaksh Singh Dhillon",
+          "Guru Tegh Bahadur",
+          "Ali Mardan Khan",
+          "Subhas Chandra Bose",
+          "Netaji"
+        ],
+        "places": [
+          "Delhi",
+          "Old Delhi",
+          "Shahjahanabad",
+          "Chandni Chowk",
+          "Jama Masjid",
+          "Fatehpuri Masjid",
+          "Salimgarh",
+          "Salimgarh Fort",
+          "Raj Ghat",
+          "Lahori Gate",
+          "Delhi Gate",
+          "Water Gate",
+          "Yamuna",
+          "Humayun's Tomb",
+          "Rangoon",
+          "Meerut",
+          "Karnal",
+          "Sis Ganj Gurdwara",
+          "Lal Qila metro",
+          "Chandni Chowk metro"
+        ],
+        "architecture_terms": [
+          "Chatta Chowk",
+          "Meena Bazaar",
+          "Naubat Khana",
+          "Naqqar Khana",
+          "Diwan-i-Aam",
+          "Diwan-i-Khas",
+          "Rang Mahal",
+          "Khas Mahal",
+          "Mumtaz Mahal pavilion",
+          "Moti Masjid",
+          "Pearl Mosque",
+          "Hayat Bakhsh Bagh",
+          "Zafar Mahal",
+          "Sawan",
+          "Bhadon",
+          "Shahi Burj",
+          "Nahr-i-Bihisht",
+          "Stream of Paradise",
+          "Mizan-i-Adl",
+          "Scales of Justice",
+          "hammam",
+          "jharokha",
+          "barbican",
+          "bastion",
+          "moat",
+          "ramparts",
+          "Peacock Throne",
+          "pietra dura"
+        ],
+        "tower_and_wall_words": {
+          "keywords": [
+            "tower",
+            "wall",
+            "walls",
+            "rampart",
+            "gate",
+            "pillar",
+            "burj",
+            "bastion"
+          ],
+          "rule": "For 'height' questions about the Red Fort, default to the walls, 18 m on the river side and about 33 m on the city side."
+        },
+        "materials": [
+          "red sandstone",
+          "white marble",
+          "rubble core",
+          "brick core",
+          "lime mortar",
+          "inlay",
+          "gilding"
+        ],
+        "events_and_dates": [
+          "1546",
+          "1638",
+          "1648",
+          "1659",
+          "1739",
+          "1757",
+          "1803",
+          "1857",
+          "1858",
+          "1862",
+          "1945",
+          "1946",
+          "1947",
+          "15 August",
+          "16 August 1947",
+          "2000",
+          "2003",
+          "2007",
+          "2018",
+          "Battle of Karnal",
+          "siege of Delhi",
+          "1857 revolt",
+          "First War of Independence",
+          "INA trials",
+          "Independence Day",
+          "UNESCO",
+          "Adopt a Heritage",
+          "Dalmia Bharat"
+        ],
+        "facts_and_myths": [
+          "Koh-i-Noor",
+          "Peacock Throne",
+          "\"if there is a paradise on earth\"",
+          "flag hoisting",
+          "PM speech",
+          "₹500 note",
+          "last Mughal emperor",
+          "exiled to Rangoon",
+          "army barracks",
+          "Sound and Light Show",
+          "Swatantrata Sangram Sangrahalaya"
+        ],
+        "preservation_and_visiting": [
+          "closed Monday",
+          "pollution",
+          "sandstone weathering",
+          "graffiti",
+          "ASI",
+          "restoration",
+          "security",
+          "2000 attack"
+        ]
+      }
+    }
+  ],
+  "shared_and_comparison_keywords": {
+    "dynasties_and_powers": [
+      "Mughal",
+      "Mughals",
+      "Mughal Empire",
+      "Delhi Sultanate",
+      "Ghurid",
+      "Mamluk",
+      "Slave dynasty",
+      "Khalji",
+      "Tughlaq",
+      "Sayyid",
+      "Lodi",
+      "Suri",
+      "Maratha",
+      "Marathas",
+      "British",
+      "East India Company",
+      "Crown rule",
+      "Persia",
+      "Afghanistan"
+    ],
+    "shared_people": [
+      {
+        "person": "Shah Jahan",
+        "monuments": [
+          "Taj Mahal",
+          "Red Fort"
+        ]
+      },
+      {
+        "person": "Ustad Ahmad Lahori",
+        "monuments": [
+          "Taj Mahal",
+          "Red Fort"
+        ]
+      },
+      {
+        "person": "Aurangzeb",
+        "monuments": [
+          "Taj Mahal",
+          "Red Fort"
+        ]
+      },
+      {
+        "person": "Akbar"
+      },
+      {
+        "person": "Jahangir"
+      },
+      {
+        "person": "Babur"
+      },
+      {
+        "person": "Humayun"
+      },
+      {
+        "person": "Nadir Shah"
+      },
+      {
+        "person": "Timur"
+      }
+    ],
+    "shared_terms": [
+      "UNESCO",
+      "World Heritage Site",
+      "ASI",
+      "Archaeological Survey of India",
+      "Indo-Islamic architecture",
+      "Mughal architecture",
+      "red sandstone",
+      "marble",
+      "pietra dura",
+      "minaret",
+      "mosque",
+      "tomb",
+      "mausoleum",
+      "fort",
+      "palace",
+      "gateway",
+      "charbagh",
+      "Delhi",
+      "Agra"
+    ],
+    "comparison_words": [
+      "tallest",
+      "oldest",
+      "biggest",
+      "largest",
+      "which is older",
+      "which is taller",
+      "built first",
+      "most visited",
+      "difference between",
+      "compare",
+      "similar",
+      "versus",
+      "vs",
+      "ranking",
+      "order"
+    ],
+    "general_words": [
+      "India",
+      "Indian monuments",
+      "heritage",
+      "history",
+      "historical",
+      "tourism",
+      "travel",
+      "ancient",
+      "medieval",
+      "wonder",
+      "monument",
+      "landmark"
+    ]
+  },
+  "quick_comparison": {
+    "summary": "The oldest of the three is the Qutub Minar, and the Taj Mahal and Red Fort were both built under Shah Jahan within about two decades of each other.",
+    "table": [
+      {
+        "monument": "Taj Mahal",
+        "built_by": "Shah Jahan",
+        "period": "c. 1632-1653",
+        "main_size": "About 73 m high",
+        "type": "Mausoleum",
+        "unesco_year": 1983
+      },
+      {
+        "monument": "Qutub Minar",
+        "built_by": "Aibak, Iltutmish, Firoz Shah Tughlaq",
+        "period": "c. 1199-1369",
+        "main_size": "72.5 m high",
+        "type": "Victory tower and minaret",
+        "unesco_year": 1993
+      },
+      {
+        "monument": "Red Fort",
+        "built_by": "Shah Jahan",
+        "period": "1638-1648",
+        "main_size": "Walls about 18 to 33 m high, about 2.4 km long",
+        "type": "Fort and palace",
+        "unesco_year": 2007
+      }
+    ]
+  },
+  "disambiguation_rules": [
+    {
+      "user_says": [
+        "pillar",
+        "column",
+        "tower"
+      ],
+      "treat_as": "The minarets (Taj Mahal) / the Qutub Minar shaft (Qutub Minar)",
+      "unless": "The user says iron, rust, Gupta or Chandragupta, then use the Iron Pillar (Q156-158)"
+    },
+    {
+      "user_says": [
+        "minar",
+        "minaret"
+      ],
+      "treat_as": "The Qutub Minar",
+      "unless": "The user says Taj, then use the Taj Mahal minarets"
+    },
+    {
+      "user_says": [
+        "Taj"
+      ],
+      "treat_as": "The Taj Mahal",
+      "unless": "The user says Baby Taj, then use Itmad-ud-Daulah's Tomb (Q83)"
+    },
+    {
+      "user_says": [
+        "Qutub",
+        "Qutb",
+        "Kutub"
+      ],
+      "treat_as": "The Qutub Minar",
+      "unless": "The user says Qutub Festival or Qutb complex, then use the complex answers"
+    },
+    {
+      "user_says": [
+        "Lal Qila",
+        "fort"
+      ],
+      "treat_as": "The Red Fort in Delhi",
+      "unless": "The user says Agra, then ask whether they mean Agra Fort (Q81)"
+    },
+    {
+      "user_says": [
+        "gate"
+      ],
+      "treat_as": "The Lahori Gate (Red Fort)",
+      "unless": "The user names the Great Gate or Darwaza-i-Rauza (Taj Mahal), the Alai Darwaza (Qutub Minar) or the Delhi Gate"
+    },
+    {
+      "user_says": [
+        "height",
+        "how tall"
+      ],
+      "treat_as": "The main structure's height",
+      "unless": "The user names a part, such as a dome, minaret or wall"
+    },
+    {
+      "user_says": [
+        "Shah Jahan"
+      ],
+      "treat_as": "Both the Taj Mahal and Red Fort",
+      "unless": "Ask which monument the user means if the question is about construction details"
+    },
+    {
+      "user_says": [
+        "Delhi monument"
+      ],
+      "treat_as": "Qutub Minar or Red Fort",
+      "unless": "Ask which one"
+    },
+    {
+      "user_says": [
+        "Agra monument"
+      ],
+      "treat_as": "The Taj Mahal",
+      "unless": "Mention that Agra Fort is nearby"
+    }
+  ],
+  "fallback_rules": [
+    {
+      "id": 1,
+      "name": "No match",
+      "rule": "If nothing in the Q&A document fits, say \"I don't have that information\" and suggest a related topic. Do not guess."
+    },
+    {
+      "id": 2,
+      "name": "Changing facts",
+      "rule": "For ticket prices, timings, closures and crowd levels, say these change and point to the official ASI website."
+    },
+    {
+      "id": 3,
+      "name": "Approximate figures",
+      "rule": "For cost, workforce and similar numbers, state that sources differ."
+    },
+    {
+      "id": 4,
+      "name": "Contested claims",
+      "rule": "For legends such as the Black Taj, use the cautious wording in the Q&A document."
+    },
+    {
+      "id": 5,
+      "name": "Out of scope",
+      "rule": "For monuments other than these three, say the chatbot covers only the Taj Mahal, Qutub Minar and Red Fort."
+    }
+  ]
+}
