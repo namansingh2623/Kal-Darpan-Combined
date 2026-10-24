@@ -64,7 +64,7 @@ function providerError(status) {
   return 'Weather service could not return conditions for this location.'
 }
 
-function createHandler(apiKey) {
+export function createHandler(apiKey) {
   return async (request, response) => {
     if (request.method !== 'GET') {
       response.setHeader('Allow', 'GET')

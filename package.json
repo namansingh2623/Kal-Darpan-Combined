@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "narration:bundle": "node scripts/generate-timeline-audio.js",
-    "sarvam:chat": "node scripts/sarvam-chat.js"
+    "sarvam:chat": "node scripts/sarvam-chat.js",
+    "functions:prepare": "node scripts/prepare-functions.js"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.0",

@@ -12,6 +12,16 @@ function sendJson(response, status, body) {
 }
 
 function readJson(request) {
+  if (Buffer.isBuffer(request.rawBody)) {
+    if (request.rawBody.length > maxBodyBytes) {
+      return Promise.reject(Object.assign(new Error('Request is too large.'), { status: 413 }));
+    }
+    try {
+      return Promise.resolve(JSON.parse(request.rawBody.toString('utf8')));
+    } catch {
+      return Promise.reject(Object.assign(new Error('Request body must be valid JSON.'), { status: 400 }));
+    }
+  }
   return new Promise((resolve, reject) => {
     const chunks = [];
     let bytes = 0;
@@ -41,10 +51,11 @@ function readJson(request) {
   });
 }
 
-function isSameOriginRequest(request) {
+function isSameOriginRequest(request, allowedOrigins = []) {
   const origin = request.headers.origin;
   const host = request.headers.host;
   if (typeof origin !== 'string' || typeof host !== 'string') return false;
+  if (allowedOrigins.includes(origin)) return true;
 
   try {
     const parsed = new URL(origin);
@@ -55,7 +66,7 @@ function isSameOriginRequest(request) {
   }
 }
 
-function createHandler({ sarvamApiKey }) {
+export function createHandler({ sarvamApiKey, allowedOrigins }) {
   const sarvam = sarvamApiKey ? new SarvamAIClient({ apiSubscriptionKey: sarvamApiKey }) : null;
 
   return async (request, response) => {
@@ -64,7 +75,7 @@ function createHandler({ sarvamApiKey }) {
       sendJson(response, 405, { error: 'Use POST to generate Hindi or Tamil narration.' });
       return;
     }
-    if (!isSameOriginRequest(request)) {
+    if (!isSameOriginRequest(request, allowedOrigins)) {
       sendJson(response, 403, { error: 'Narration requests must come from this site.' });
       return;
     }

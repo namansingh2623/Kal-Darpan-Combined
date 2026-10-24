@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "source": "functions",
+    "predeploy": "npm run functions:prepare"
+  },
+  "hosting": {
+    "site": "kaal-darpan",
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "rewrites": [
+      { "source": "/api/**", "function": { "functionId": "api", "region": "us-central1" } }
+    ]
+  }
+}

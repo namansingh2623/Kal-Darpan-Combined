@@ -24,6 +24,28 @@ The GPS atlas uses MapLibre GeoJSON layers for monument dots and labels, with `[
 
 ## API configuration
 
+### Firebase deployment
+
+The static website is configured for the `kaal-darpan` Firebase Hosting site at
+`https://kaal-darpan.web.app`. Build with `npm ci && npm run build`, then publish
+with `firebase deploy --only hosting --project kaal-darpan`.
+
+The Vite development server's `/api/chat`, `/api/weather`, and `/api/narration`
+handlers are packaged for a Firebase Cloud Function by `npm run
+functions:prepare`. Firebase Hosting routes `/api/**` to that function after a
+successful functions deployment. The project must have a linked Cloud Billing
+account (Blaze plan) for Cloud Functions. In `functions/`, run `npm ci`; then
+store `GEMINI_API_KEY`, `SARVAM_API_KEY`, and `OPENWEATHER_API_KEY` with
+`firebase functions:secrets:set` and deploy with `firebase deploy --only
+functions,hosting --project kaal-darpan`. Keep provider keys out of Git and the
+frontend bundle. The functions package uses Node.js 22, so use a current
+Firebase CLI and a supported local Node.js version.
+
+The deployed static demo checkout and Macerena access work in the browser. They
+are not paid subscriptions. The separate Stripe/SMTP scaffold is not deployed
+by Firebase Hosting or the API function; it still needs a production checkout,
+credentials, and subscription implementation before real billing is possible.
+
 The `.env.local` file is intentionally excluded. To enable the main site's development APIs, create one in this folder with:
 
 ```dotenv
